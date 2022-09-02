@@ -6,10 +6,20 @@ namespace MyApp
     {
         public static void Main(string[] args)
         {
-            foreach (var arg in args)
+            if (args != Array.Empty<string>() && args.Length > 0){
+                foreach (var arg in args)
+                {
+                    int num = Int32.Parse(arg);
+                    Console.WriteLine(YayOrNay(IsLeapYear(num)));   
+                }
+            } else
             {
-                int num = Int32.Parse(arg);
-                Console.WriteLine(IsLeapYear(num));   
+                Console.WriteLine("Provide a year");
+                string userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out var val))
+                {
+                    Console.WriteLine(YayOrNay(IsLeapYear(val)));
+                } else Console.WriteLine("Error");
             }
         }
 
@@ -25,6 +35,12 @@ namespace MyApp
                 return true;
             }
             return false;
+        }
+
+        static string YayOrNay(bool val)
+        {
+            if (val == true) return "yay";
+            else return "nay";
         }
     }
 }

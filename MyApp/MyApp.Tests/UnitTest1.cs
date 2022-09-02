@@ -7,7 +7,7 @@ namespace MyApp.Tests
     public class UnitTest1
     {
         [Fact]
-        public void Returns_True_On_4()
+        public void Returns_Yay_On_4()
         {
             //Arrange
             using var writer = new StringWriter();
@@ -19,11 +19,11 @@ namespace MyApp.Tests
 
             //Assert
             var output = writer.GetStringBuilder().ToString().TrimEnd();
-            Assert.Equal("True", output);
+            Assert.Equal("yay", output);
         }
 
         [Fact]
-        public void Returns_False_On_5()
+        public void Returns_Nay_On_5()
         {
             //Arrange
             using var writer = new StringWriter();
@@ -35,11 +35,11 @@ namespace MyApp.Tests
 
             //Assert
             var output = writer.GetStringBuilder().ToString().TrimEnd();
-            Assert.Equal("False", output);
+            Assert.Equal("nay", output);
         }
 
         [Fact]
-        public void Returns_False_On_100()
+        public void Returns_Nay_On_100()
         {
             //Arrange
             using var writer = new StringWriter();
@@ -51,11 +51,11 @@ namespace MyApp.Tests
 
             //Assert
             var output = writer.GetStringBuilder().ToString().TrimEnd();
-            Assert.Equal("False", output);
+            Assert.Equal("nay", output);
         }
 
         [Fact]
-        public void Returns_True_On_400()
+        public void Returns_Yay_On_400()
         {
             //Arrange
             using var writer = new StringWriter();
@@ -67,7 +67,7 @@ namespace MyApp.Tests
 
             //Assert
             var output = writer.GetStringBuilder().ToString().TrimEnd();
-            Assert.Equal("True", output);
+            Assert.Equal("yay", output);
         }
     }
 }
