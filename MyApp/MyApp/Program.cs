@@ -9,8 +9,10 @@ namespace MyApp
             if (args != Array.Empty<string>() && args.Length > 0){
                 foreach (var arg in args)
                 {
-                    int num = Int32.Parse(arg);
-                    Console.WriteLine(YayOrNay(IsLeapYear(num)));   
+                    if (int.TryParse(arg, out var val)) 
+                        if (val < 1582) Console.WriteLine("Year Out of Scope");
+                        else Console.WriteLine(YayOrNay(IsLeapYear(val)));  
+                    else Console.WriteLine("Error");
                 }
             } else
             {
@@ -18,7 +20,8 @@ namespace MyApp
                 string userInput = Console.ReadLine();
                 if (int.TryParse(userInput, out var val))
                 {
-                    Console.WriteLine(YayOrNay(IsLeapYear(val)));
+                    if (val < 1582) Console.WriteLine("Year Out of Scope");
+                    else Console.WriteLine(YayOrNay(IsLeapYear(val)));
                 } else Console.WriteLine("Error");
             }
         }
