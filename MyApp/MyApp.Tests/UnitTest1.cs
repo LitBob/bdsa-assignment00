@@ -99,7 +99,7 @@ namespace MyApp.Tests
 
             //Assert
             var output = writer.GetStringBuilder().ToString().TrimEnd();
-            Assert.Equal("Error", output);
+            Assert.Equal("Input is Not a Number", output);
         }
     }
 }

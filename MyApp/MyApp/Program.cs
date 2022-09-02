@@ -12,7 +12,7 @@ namespace MyApp
                     if (int.TryParse(arg, out var val)) 
                         if (val < 1582) Console.WriteLine("Year Out of Scope");
                         else Console.WriteLine(YayOrNay(IsLeapYear(val)));  
-                    else Console.WriteLine("Error");
+                    else Console.WriteLine("Input is Not a Number");
                 }
             } else
             {
@@ -22,7 +22,7 @@ namespace MyApp
                 {
                     if (val < 1582) Console.WriteLine("Year Out of Scope");
                     else Console.WriteLine(YayOrNay(IsLeapYear(val)));
-                } else Console.WriteLine("Error");
+                } else Console.WriteLine("Input is Not a Number");
             }
         }
 
